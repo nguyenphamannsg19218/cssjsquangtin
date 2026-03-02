@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>HOÀI BÃO - 12A4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">
+        <img src="logo.png" alt="Logo trường">
+    </div>
+
+    <div class="title">
+        <h1>HOÀI BÃO</h1>
+        <p>Báo Tường Điện Tử Lớp 12A4</p>
+    </div>
+
+    <div class="group-name">
+        NHÓM 1
+    </div>
+</header>
+
+
+<section class="section">
+    <h2>Lời Ngõ</h2>
+
+    <div class="grid-2">
+
+        <div class="card">
+            <img src="thanhxuanduoi.png">
+            <h3>Thanh Xuân Dưới Mái Trường</h3>
+            <p>Những năm tháng học sinh là quãng thời gian đẹp nhất. 
+            Chúng ta đã cùng nhau học tập, trưởng thành và tạo nên những kỷ niệm khó quên.</p>
+        </div>
+
+        <div class="card">
+            <img src="nguoilaido.png">
+            <h3>Người Lái Đò Thầm Lặng</h3>
+            <p>Thầy cô là những người dìu dắt chúng ta trên con đường tri thức.
+            Sự tận tâm ấy sẽ mãi được ghi nhớ.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section">
+    <h2>Các Hoạt Động</h2>
+
+    <div class="gallery">
+        <div class="photo">
+            <img src="camtrai263.png">
+            <p>Cắm Trại 26-3</p>
+        </div>
+
+        <div class="photo">
+            <img src="vannghe263.png">
+            <p>Văn Nghệ 26-3</p>
+        </div>
+
+        <div class="photo">
+            <img src="thidua.png">
+            <p>Thi Đua Hàng Tuần</p>
+        </div>
+
+        <div class="photo">
+            <img src="mungdangmungxuan.png">
+            <p>Mừng Đảng Mừng Xuân</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <h2>Video & Âm Nhạc</h2>
+
+    <div class="grid-2">
+
+        <div class="card">
+            <video controls>
+                <source src="video_lop.mp4" type="video/mp4">
+            </video>
+            <p>Kỷ Niệm Năm Học 2023-2024</p>
+        </div>
+
+        <div class="card">
+            <video controls>
+                <source src="video_nhac.mp4" type="video/mp4">
+            </video>
+            <p>Bài hát thanh xuân: Cảm Ơn Người Đã Thức Cùng Tôi</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section">
+    <h2>Góc Bình Luận</h2>
+
+    <form id="commentForm">
+        <input type="text" id="name" placeholder="Họ và tên" required>
+        <textarea id="content" placeholder="Nhập bình luận..." required></textarea>
+        <button type="submit">Gửi</button>
+    </form>
+
+    <div id="commentList"></div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- CỘT 1 -->
+        <div class="footer-col">
+            <h3>📰 HOÀI BÃO</h3>
+            <p>Báo Tường Điện Tử Lớp 12A4</p>
+            <p>Ghi lại những kỷ niệm thanh xuân đáng nhớ</p>
+        </div>
+
+        <!-- CỘT 2 -->
+        <div class="footer-col">
+            <h3>Liên Hệ</h3>
+            <p>📧 ttin25508@gmail.com</p>
+            <p>🎓 Nhóm 1 - Lớp 12A4</p>
+        </div>
+
+        <!-- CỘT 3 -->
+        <div class="footer-col">
+            <h3>Thành Viên</h3>
+
+            <p><strong>Quang Tín</strong> (nhóm trưởng)</p>
+            <p><strong>Thu Hồng</strong> (nhóm phó)</p>
+
+            <p style="margin-top:10px;"><strong>Các thành viên khác:</strong></p>
+            <p class="member-list">
+                Kim Quy, Trà My, Hồng Phấn, Gia Hân, Gia Bảo, 
+                Thành Nhân, Thế Vinh, Phạm Ý, Thảo Vy, 
+                Bùi Thái, Lưu Thái, Mỹ Quỳnh, Thị Thương, 
+                Tuấn Kiệt, Đình Sỹ, Thanh Thảo
+            </p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+        © 2026 Nhóm 1 - Lớp 12A4. Cập nhật: 01/03/2026 <br>
+        Made with ❤️ by Nhóm 1
+    </div>
+</footer>
+
+<script>
+const form = document.getElementById("commentForm");
+const list = document.getElementById("commentList");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const content = document.getElementById("content").value;
+
+    const div = document.createElement("div");
+    div.classList.add("comment");
+    div.innerHTML = "<strong>" + name + "</strong><p>" + content + "</p>";
+
+    list.prepend(div);
+    form.reset();
+});
+</script>
+
+</body>
+</html>
